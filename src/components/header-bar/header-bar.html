@@ -1,33 +1,33 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg header-bar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Cars'R'Rus</a>
+    <router-link class="navbar-brand" style="color: white;" :to="{name: 'home'}">
+      <div id="brand-font">Cars'R'Rus</div>
+    </router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <router-link class="nav-link active" :to="{name: 'home'}">Home</router-link>
-        </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="nav-link dropdown-toggle dropdown-titles" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Cars
-          </a>
+          </div>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">All cars</a></li>
             <li><a class="dropdown-item" href="#">Reserve a car</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <div class="nav-link dropdown-toggle dropdown-titles" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Members
-          </a>
+          </div>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Members</a></li>
             <li><a class="dropdown-item" href="#">Subscribe as member</a></li>
           </ul>
         </li>
       </ul>
+      <router-link :to="{name: 'about'}"><div class="nav-link link-item">About</div></router-link>
     </div>
   </div>
 </nav>

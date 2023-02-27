@@ -1,6 +1,8 @@
 <template>
     <header-bar></header-bar>
-    <router-view></router-view>
+    <div id="view-container">
+      <router-view></router-view>
+    </div>
 </template>
 <script>
 import HeaderBar from './header-bar/header-bar-index.vue'
@@ -11,3 +13,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+  #view-container{
+    margin-top: 25px;
+    width: 100%;
+  }
+</style>

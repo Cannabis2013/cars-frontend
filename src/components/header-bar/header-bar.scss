@@ -1,5 +1,38 @@
 .header-bar {
-    width: 100%;
-    height: 128px;
+    background-color: rgba($color: blue, $alpha: 0.75);
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+#brand-font{
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+#brand-font:hover{
+    color: wheat;
+}
+
+.dropdown-titles{
+    background-color: white;
+    border:1px solid black;
+    border-radius: 15px;
+    margin-right: 15px;
+    font-weight: bold;
+    font-size: 1.25rem;
+    user-select: none;
+
+}
+
+.dropdown-backdrop{
     background-color: rgba($color: blue, $alpha: 0.25);
+}
+
+.link-item{
+    font-size: 2rem;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
