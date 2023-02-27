@@ -1,0 +1,46 @@
+#car-cont {
+    display: grid;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr 1fr 80px;
+    width: 768px;
+    align-items: center;
+    column-gap: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: wheat;
+    padding: 15px;
+}
+
+p{
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+}
+
+
+#name-wrap{
+    overflow-x: scroll;    
+}
+
+#name-wrap::-webkit-scrollbar{
+    display: none;
+}
+
+
+#car-name{
+    justify-self: start;
+}
+
+#car-price{
+    justify-self: end;
+}
+
+#reserve-btn{
+    width: 100%;
+    border-radius: 5px;
+}
+
+#reserve-btn:active{
+    scale: 0.98;
+}
