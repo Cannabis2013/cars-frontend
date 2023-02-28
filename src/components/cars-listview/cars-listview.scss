@@ -1,0 +1,11 @@
+.c-ov-cont {
+    display: grid;
+    grid-auto-flow: row;
+    row-gap: 10px;
+    width: 100%;
+}
+
+#no-car-msg{
+    font-size: 2rem;
+    font-style: italic;
+}

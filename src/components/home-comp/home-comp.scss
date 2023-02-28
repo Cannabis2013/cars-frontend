@@ -1,9 +1,77 @@
-
 #cherno-pic{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background: url('../../assets/fire-chernobog.gif') no-repeat;
-    background-size: cover;
-    width: 960px;
-    height: 960px;
+    background-size: cover;    
+    width: 100%;
+    height: 1440px;
+    opacity: 1;
+    z-index: -1;
+}
+
+#logo{
+    font-size: 8rem;
+    font-weight: bold;
+    color: white;
+    width: min-content;
+    white-space: nowrap;
     margin-left: auto;
     margin-right: auto;
+    font-family: "Nimbus Sans Narrow", serif;
+    margin-top:15px;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: lightgray 5px 5px 25px;
+    
+    background: black;
+}
+
+#collage-cont{
+    width: 100%;
+}
+
+#collage{
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1280px;
+    height: 960px;
+}
+
+#shitbox-pic{
+    position: absolute;
+    right: 32px;
+    top: 224px;
+    width: 768px;
+    height: 512px;
+    border-radius: 25px;
+    background: url('../../assets/shitbox.png') no-repeat;
+    background-size: cover;
+    transform: rotate(-12deg);
+}
+
+#hiace-pic{
+    position: absolute;
+    top: 128px;
+    left: 32px;
+    width: 512px;
+    height: 512px;
+    border-radius: 25px;
+    background: url('../../assets/hiace.jpg') no-repeat;
+    background-size: cover;
+    transform: rotate(4deg);
+}
+
+#wreck-pic{
+    position: absolute;
+    top: 640px;
+    left: 121px;
+    width: 512px;
+    height: 512px;
+    border-radius: 25px;
+    background: url('../../assets/wreck.jpg') no-repeat;
+    background-size: cover;
 }

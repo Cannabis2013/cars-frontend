@@ -1,5 +1,5 @@
 import Vue from 'vue';
-import CarcardComponent from './index.vue';
+import CarcardComponent from './car-card.vue';
 
 // Here are some Jasmine 2.0 tests, though you can
 // use any test runner / assertion library combo you prefer

@@ -1,0 +1,6 @@
+<div class="c-ov-cont">
+    <div v-if="cars.length > 0" v-for="car in cars">
+        <Car :car="car"></Car>
+    </div>
+    <p v-else id="no-car-msg">We have no cars to show at the moment</p>
+</div>

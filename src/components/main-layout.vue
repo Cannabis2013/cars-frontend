@@ -1,7 +1,9 @@
 <template>
-    <header-bar></header-bar>
-    <div id="view-container">
-      <router-view></router-view>
+    <div id="page-cont">
+      <header-bar></header-bar>
+      <div id="view-container">
+        <router-view></router-view>
+      </div>
     </div>
 </template>
 <script>
@@ -14,8 +16,16 @@ export default {
 }
 </script>
 <style scoped>
-  #view-container{
-    margin-top: 25px;
+  #page-cont{
+    height: 100vh;
     width: 100%;
+    display: grid;
+    grid-template-rows : min-content 1fr;
+    grid-auto-flow: column;
+  }
+  #view-container{
+    width: 100%;
+    height: 100%;
+    overflow: auto;
   }
 </style>

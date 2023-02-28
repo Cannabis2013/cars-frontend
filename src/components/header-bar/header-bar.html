@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg header-bar">
   <div class="container-fluid">
     <router-link class="navbar-brand" style="color: white;" :to="{name: 'home'}">
-      <div id="brand-font">Chernobogs dealership</div>
+      <div id="brand-font">Chernobogs Car Rental</div>
     </router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -10,24 +10,13 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
           <div class="nav-link dropdown-toggle dropdown-titles dropdown-dims" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Cars
+            Menu
           </div>
           <ul class="dropdown-menu">
-            <li><router-link class="dropdown-item" :to="{name: 'cars-overview'}">All cars</router-link></li>
-            <li><router-link class="dropdown-item" :to="{name:'reservations-overview'}">Reservations</router-link></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <div class="nav-link dropdown-toggle dropdown-titles dropdown-dims" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Members
-          </div>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Members</a></li>
-            <li><a class="dropdown-item" href="#">Subscribe as member</a></li>
+              <li><router-link class="dropdown-item" :to="{name: 'cars-listview'}">All cars</router-link></li>
           </ul>
         </li>
       </ul>
-      <router-link :to="{name: 'about'}"><div class="nav-link link-item">About</div></router-link>
     </div>
   </div>
 </nav>

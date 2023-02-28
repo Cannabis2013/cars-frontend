@@ -3,9 +3,7 @@ export default {
   name: 'car-card',
   components: {},
   props: {
-    brand : String,
-    model : String,
-    price : Number
+    car : JSON,
   },
   data () {
     return {
@@ -18,7 +16,9 @@ export default {
 
   },
   methods: {
-
+    redirectToDetails : function (){
+      this.$root.$router.push('/cars/details/' + this.car.id)
+    }
   }
 }
 
