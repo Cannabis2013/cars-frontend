@@ -13,17 +13,3 @@ export function getRequest(url,resultHandler,requestParameters = {}) {
         resultHandler(response.data);
     }).catch(e => console.log('HTTPCLIENT FAIL MESSAGE: ' + e.message))
 }
-
-export function getRequestWithParams(url,reqParams,resultHandler) {
-    axios({
-        method : 'get',
-        url : url,
-        params: reqParams
-    }).then(response => {
-        if(response.status !== 200){
-            console.log("Bad response code: " + response.status)
-            resultHandler("[]");
-        }
-        resultHandler(response.data);
-    }).catch(e => console.log('HTTPCLIENT FAIL MESSAGE: ' + e.message))
-}

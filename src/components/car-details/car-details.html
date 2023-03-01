@@ -1,4 +1,19 @@
-<section class="car-details">
-  <h1> {{car.brand}} {{car.model}}</h1>
+<section id="car-details">
+    <div id="img-cont">
+        <img style="width: 100%;height: 100%;" :src="'data:image;base64,' + car.imageBinary "/>
+    </div>
+    <div id="car-model"> {{car.brand}} {{car.model}}</div>
+    <div id="car-price"> {{car.pricePrDay}} kr. </div>
+    <div id="car-descr">
+        <div style="font-size: 1.75rem;font-weight: bold;text-align: left;">Description:</div>
+        {{ car.description }}
+    </div>
+    <div id="car-feats">
+        <div style="font-size: 1.75rem;font-weight: bold;text-align: left;">Features:</div>
+        <br>
+        <ul v-for="feat in car.features">
+            <li>{{feat}}</li>
+        </ul>
+    </div>
 </section>
 

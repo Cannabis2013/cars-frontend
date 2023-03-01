@@ -24,8 +24,14 @@ export default {
     grid-auto-flow: column;
   }
   #view-container{
-    width: 100%;
+    width: 1024px;
     height: 100%;
     overflow: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  #view-container::-webkit-scrollbar{
+    display: none;
   }
 </style>

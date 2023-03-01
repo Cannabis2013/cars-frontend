@@ -1,5 +1,6 @@
 import {getRequest} from '@/Js/Http/HttpClient'
 
+
 export default {
   name: 'car-details',
   components: {},
@@ -8,11 +9,12 @@ export default {
   },
   data () {
     return {
-      car : JSON
+      car : JSON,
+      image : String
     }
   },
   computed: {
-
+    
   },
   mounted () {
     getRequest("http://localhost:8080/cars/one",this.handleResult,{id : this.id})
@@ -20,7 +22,7 @@ export default {
   methods: {
     handleResult : function (data){
       this.car = data
-    }
+    },
   }
 }
 
