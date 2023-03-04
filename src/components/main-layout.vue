@@ -24,7 +24,7 @@ export default {
     grid-auto-flow: column;
   }
   #view-container{
-    width: 1024px;
+    width: 100%;
     height: 100%;
     overflow: auto;
     margin-left: auto;

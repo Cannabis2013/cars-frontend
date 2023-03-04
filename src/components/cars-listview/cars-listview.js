@@ -1,5 +1,6 @@
 import Car from '../car-card/car-card.vue'
-import {getRequest} from '@/Js/Http/HttpClient'
+import {getRequest} from '../../Js/Http/HttpClient'
+
 
 export default {
   name: 'cars-overview',

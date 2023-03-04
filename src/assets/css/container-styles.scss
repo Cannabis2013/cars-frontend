@@ -1,0 +1,11 @@
+.page-cont{
+  width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1279px){
+  .page-cont{
+    width: 100%;
+  }
+}

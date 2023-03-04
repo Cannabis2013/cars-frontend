@@ -1,5 +1,4 @@
-import {getRequest} from '@/Js/Http/HttpClient'
-
+import {getRequest} from '../../Js/Http/HttpClient'
 
 export default {
   name: 'car-details',

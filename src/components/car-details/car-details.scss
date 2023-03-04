@@ -1,6 +1,5 @@
 #car-details{
   display: grid;
-  width: 100%;
   grid-auto-flow: row;
   grid-template-columns: 400px 1fr;
   margin-top: 50px;
@@ -16,12 +15,15 @@
 
 #img-cont{
   grid-row: span 4;
+  border-radius: 15px;
+  overflow: auto;
 }
 
 #car-model{
-  font-size: 3rem;
+  font-size: 4rem;
   font-weight: bold;
   text-align: left;
+  line-height: 4rem;
 }
 
 #car-price{

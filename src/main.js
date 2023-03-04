@@ -6,6 +6,8 @@ import Cars from './components/cars-page/cars-page.vue'
 import About from './components/about-comp/about-comp.vue'
 import Reservations from './components/reservations-overview/reservations-overview.vue'
 import CarDetails from './components/car-details/car-details.vue'
+import './assets/css/container-styles.scss'
+import './assets/css/utils.scss'
 
 const routes = [
     { path: '/',name: 'home', component: Home},
