@@ -6,7 +6,7 @@ module.exports = {
   devServer: {
       open: process.platform === 'linux',
       host: '0.0.0.0',
-      port: 8090, // CHANGE YOUR PORT HERE!
+      port: 8090,
       https: false,
   },
 }
