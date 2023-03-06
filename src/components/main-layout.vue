@@ -1,7 +1,7 @@
 <template>
     <div id="page-cont">
       <header-bar></header-bar>
-      <div id="view-container">
+      <div id="view-container" :onscroll="(e) => this.printScrollMessage(e)">
         <router-view></router-view>
       </div>
     </div>
@@ -12,6 +12,13 @@ export default {
   name: 'main-layout',
   components: {
     HeaderBar
+  },
+  methods: {
+    printScrollMessage : function (e){
+      let el = document.querySelector("#view-container")
+      let y = el.scrollTop
+      console.log(y)
+    }
   }
 }
 </script>

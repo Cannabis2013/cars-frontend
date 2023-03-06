@@ -1,0 +1,7 @@
+<section class="ani-section">
+    <div v-if="level === 1"><div id="top-lvl-title">{{ title }}</div></div>
+    <div v-else><div id="sub-lvl-title">{{ title }}</div></div>
+    <br>
+    <p><slot></slot></p>
+</section>
+

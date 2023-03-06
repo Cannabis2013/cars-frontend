@@ -6,6 +6,7 @@ import Cars from './components/cars-page/cars-page.vue'
 import About from './components/about-comp/about-comp.vue'
 import Reservations from './components/reservations-overview/reservations-overview.vue'
 import CarDetails from './components/car-details/car-details.vue'
+import TestComp from './components/test-comp/test-comp.vue'
 import './assets/css/container-styles.scss'
 import './assets/css/utils.scss'
 
@@ -14,7 +15,8 @@ const routes = [
     {path: '/about',name: 'about', component: About},
     { path: '/cars/all',name: 'cars-listview', component: Cars},
     {path: '/reservations',name: 'reservations-overview', component: Reservations},
-    {path: '/cars/details/:id',name: 'car-details',component: CarDetails, props: true}
+    {path: '/cars/details/:id',name: 'car-details',component: CarDetails, props: true},
+    {path: '/test',name: 'test-comp', component: TestComp}
   ]
 
   const router = createRouter({
