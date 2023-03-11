@@ -7,6 +7,6 @@ module.exports = {
       open: process.platform === 'linux',
       host: '0.0.0.0',
       port: 8090,
-      https: false,
+      https: true,
   },
 }
