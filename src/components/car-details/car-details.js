@@ -16,7 +16,7 @@ export default {
     
   },
   mounted () {
-    getRequest("http://localhost:8080/cars/one",this.handleResult,{id : this.id})
+    getRequest("https://cars-r-us-api.azurewebsites.net/cars/one",this.handleResult,{id : this.id})
   },
   methods: {
     handleResult : function (data){
