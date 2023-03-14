@@ -1,10 +1,7 @@
-import AniComp from '../ani-section/ani-section.vue'
 
 export default {
-  name: 'test-comp',
-  components: {
-    AniComp
-  },
+  name: 'login-page',
+  components: {},
   props: [],
   data () {
     return {

@@ -1,0 +1,25 @@
+#login-page {
+  width: 100%;
+  padding: 25px;
+}
+
+#form-cont{
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: min-content 1fr;
+  align-items: center;
+  gap: 10px;
+  width: 512px;
+}
+
+p{
+  margin: 0;
+  padding: 0;
+  font-weight: bolder;
+  font-size: 1.25rem;
+}
+
+#submit-btn{
+  grid-column: span 2;
+  justify-self: end;
+}

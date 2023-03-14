@@ -1,4 +1,4 @@
-import {getRequest} from '../../Js/Http/HttpClient'
+import {httpGetRequest} from '../../../Js/Http/HttpClient'
 
 export default {
   name: 'car-details',
@@ -16,7 +16,7 @@ export default {
     
   },
   mounted () {
-    getRequest("https://cars-r-us-api.azurewebsites.net/cars/one",this.handleResult,{id : this.id})
+    httpGetRequest("https://cars-r-us-api.azurewebsites.net/cars/one",this.handleResult,{id : this.id})
   },
   methods: {
     handleResult : function (data){

@@ -1,5 +1,5 @@
 import Car from '../car-card/car-card.vue'
-import {getRequest} from '../../Js/Http/HttpClient'
+import {httpGetRequest} from '../../../Js/Http/HttpClient'
 
 
 export default {
@@ -15,7 +15,7 @@ export default {
     
   },
   mounted () {
-    getRequest("https://cars-r-us-api.azurewebsites.net/cars/all",this.handleResult)
+    httpGetRequest("https://cars-r-us-api.azurewebsites.net/cars/all",this.handleResult)
   },
   methods: {
     handleResult : function (cars){
