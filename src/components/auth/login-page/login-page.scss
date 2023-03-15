@@ -23,3 +23,17 @@ p{
   grid-column: span 2;
   justify-self: end;
 }
+
+input{
+  padding:5px;
+  border-radius: 10px;
+}
+
+#login-txt{
+  text-align: left;
+  font-size: 1.75rem;
+  font-weight: bold;
+  grid-column: span 2;
+  justify-self: start;
+  margin-bottom: 25px;
+}
