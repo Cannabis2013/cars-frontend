@@ -1,3 +1,4 @@
+import {lsUserName} from "../../Js/auth/userDetailsManager";
 
 export default {
   name: 'home-comp',
@@ -5,14 +6,14 @@ export default {
   props: [],
   data () {
     return {
-
+      username : ""
     }
   },
   computed: {
 
   },
   mounted () {
-
+    this.username = lsUserName()
   },
   methods: {
 

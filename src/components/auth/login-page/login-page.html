@@ -1,10 +1,10 @@
 <div id="login-page">
   <div id="form-cont" class="h-center">
       <p>Username:</p>
-      <input type="text">
+      <input id="un-ipt" v-model="uName" type="text">
       <p>Password:</p>
-      <input type="text">
-      <button id="submit-btn">Send</button>
+      <input id="pass-ipt" v-model="pass" type="text">
+      <button id="submit-btn" @click="handleSubmit">Send</button>
   </div>
 </div>
 

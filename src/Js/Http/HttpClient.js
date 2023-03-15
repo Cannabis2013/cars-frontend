@@ -1,11 +1,11 @@
 import axios from "axios";
-import {jwtAccessToken} from "../Jwt/jwtSecurityTokens.js";
+import {lsAccessToken} from "../auth/userDetailsManager";
 
 export function httpGetRequest(url, resultHandler, requestParameters = {}) {
     axios({
         method : 'get',
         url : url,
-        headers : {"Bearer" : ""},
+        headers : {"Bearer" : lsAccessToken()},
         params : requestParameters
     }).then(response => {
         if(response.status !== 200){
@@ -16,23 +16,21 @@ export function httpGetRequest(url, resultHandler, requestParameters = {}) {
     }).catch(e => console.log('HTTPCLIENT FAIL MESSAGE: ' + e.message))
 }
 
-export function httpPostRequest(url, resultHandler, payload, requestParameters = {}){
-    let token = jwtAccessToken();
+export function nonAuthorizedPostRequest(url,payload,resultHandler,errorHandler){
     axios({
         method : 'post',
         url : url,
         headers : {
             "content-type" : "application/json",
-            "Bearer" : ""
+            "Access-Control-Allow-Origin" : "*",
+            "Access-Control-Allow-Headers" : "*"
         },
-        data : payload,
-        params : requestParameters
+        data : payload
     }).then(response => {
         if(response.status !== 200){
-            console.log("Bad response code: " + response.status)
-            resultHandler("[]");
+            errorHandler(response.status);
         }
-        resultHandler(response.status);
+        resultHandler(response.data);
     }).catch(e => console.log('HTTPCLIENT FAIL MESSAGE: ' + e.message))
 }
 
