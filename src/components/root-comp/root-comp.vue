@@ -1,6 +1,6 @@
 <template></template>
 <script>
-import {authenticate} from "../../Js/auth/authentication.js";
+import * as Navigator from '../../Js/routings/routeManager'
 export default {
   
   name: 'root-comp',
@@ -15,7 +15,7 @@ export default {
     
   },
   mounted () {
-    authenticate()
+    Navigator.navigateTo("/home")
   },
   methods: {
 
