@@ -1,36 +1,49 @@
 import axios from "axios";
-import {lsAccessToken} from "../auth/userDetailsManager";
+import * as userCredentials from "../auth/userDetailsManager";
 
-export function httpGetRequest(url, resultHandler, requestParameters = {}) {
-    axios({
-        method : 'get',
-        url : url,
-        headers : {"Bearer" : lsAccessToken()},
-        params : requestParameters
-    }).then(response => {
-        if(response.status !== 200){
-            console.log("Bad response code: " + response.status)
-            resultHandler("[]");
-        }
-        resultHandler(response.data);
-    }).catch(e => console.log('HTTPCLIENT FAIL MESSAGE: ' + e.message))
-}
-
-export function nonAuthorizedPostRequest(url,payload,resultHandler,errorHandler){
+export function nonAuthenticatedPostRequest(url, payload, resultHandler, badRequestHandler, badConnectionHandler){
     axios({
         method : 'post',
         url : url,
         headers : {
-            "content-type" : "application/json",
-            "Access-Control-Allow-Origin" : "*",
-            "Access-Control-Allow-Headers" : "*"
+            "content-type" : "application/json"
         },
         data : payload
     }).then(response => {
         if(response.status !== 200){
-            errorHandler(response.status);
+            badRequestHandler(response.status);
         }
         resultHandler(response.data);
+    }).catch(e => handleConnectionProblem(e,badConnectionHandler))
+}
+
+export function authenticatedGetRequest(url, resultHandler,requestParameters = {}) {
+    let header = authHeader()
+    axios({
+        method : 'get',
+        url : url,
+        params: requestParameters,
+        headers : header
+    }).then(response => {
+        if(response.status !== 200)
+            return
+        resultHandler(response.data);
     }).catch(e => console.log('HTTPCLIENT FAIL MESSAGE: ' + e.message))
+}
+
+function handleConnectionProblem(e, handler){
+    if(handler === undefined)
+        console.log('HTTPCLIENT FAIL MESSAGE: ' + e.message)
+    else
+        handler(e)
+}
+
+function authHeader(){
+    return {
+        username : userCredentials.lsUserName(),
+        authorization : 'Bearer ' + userCredentials.lsAccessToken(),
+        roles : userCredentials.lsRoles()
+    }
+    
 }
 

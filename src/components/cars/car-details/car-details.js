@@ -1,4 +1,7 @@
-import {httpGetRequest} from '../../../Js/Http/HttpClient'
+import {authenticatedGetRequest} from '../../../Js/Http/HttpClient'
+
+const azureGetCarUri = "https://cars-r-us-api.azurewebsites.net/cars/one"
+const localGetCarUri = "http://localhost:8080/cars/one"
 
 export default {
   name: 'car-details',
@@ -16,7 +19,7 @@ export default {
     
   },
   mounted () {
-    httpGetRequest("https://cars-r-us-api.azurewebsites.net/cars/one",this.handleResult,{id : this.id})
+    authenticatedGetRequest(localGetCarUri,this.handleResult,{id : this.id})
   },
   methods: {
     handleResult : function (data){

@@ -1,4 +1,4 @@
-import {login} from "../../../Js/auth/authLogin.js";
+import {login} from "../../../Js/auth/authentication";
 
 export default {
   name: 'login-page',

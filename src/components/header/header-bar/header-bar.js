@@ -1,5 +1,5 @@
 import DropDown from "../dropdown-comp/dropdown-comp.vue"
-import {logout} from "../../../Js/auth/authLogin.js";
+import {logout} from "../../../Js/auth/authentication";
 export default {
   name: 'header-bar',
   components: {
