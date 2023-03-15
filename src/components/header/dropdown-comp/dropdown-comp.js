@@ -1,6 +1,6 @@
 
 export default {
-  name: 'header-bar',
+  name: 'dropdown-comp',
   components: {},
   props: [],
   data () {

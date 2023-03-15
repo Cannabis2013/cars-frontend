@@ -7,7 +7,7 @@
     </div>
 </template>
 <script>
-import HeaderBar from './header-bar/header-bar.vue'
+import HeaderBar from './header/header-bar/header-bar.vue'
 
 export default {
   name: 'main-layout',
