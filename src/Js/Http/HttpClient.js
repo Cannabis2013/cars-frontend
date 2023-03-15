@@ -44,6 +44,5 @@ function authHeader(){
         authorization : 'Bearer ' + userCredentials.lsAccessToken(),
         roles : userCredentials.lsRoles()
     }
-    
 }
 
