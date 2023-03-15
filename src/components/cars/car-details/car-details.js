@@ -19,7 +19,7 @@ export default {
     
   },
   mounted () {
-    authenticatedGetRequest(localGetCarUri,this.handleResult,{id : this.id})
+    authenticatedGetRequest(azureGetCarUri,this.handleResult,{id : this.id})
   },
   methods: {
     handleResult : function (data){

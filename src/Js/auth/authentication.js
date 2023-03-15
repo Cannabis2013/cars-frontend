@@ -9,7 +9,7 @@ export function isAuthenticated(){
     return g.lsAccessToken() !== ""
 }
 
-const url = "http://localhost:8080/api/auth/login"
+const url = "https://cars-r-us-api.azurewebsites.net/api/auth/login"
 
 export function logout(){
     clearUserDetails()

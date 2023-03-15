@@ -6,8 +6,8 @@ export default {
   props: [],
   data () {
     return {
-      uName : "MHAdmin",
-      pass : "xrpuofni"
+      uName : "",
+      pass : ""
     }
   },
   computed: {
@@ -28,8 +28,8 @@ export default {
       
     },
     clearValues(){
-      this.uName = "MHAdmin"
-      this.pass = "xrpofni"
+      this.uName = ""
+      this.pass = ""
     },
   }
 }
