@@ -1,30 +1,40 @@
-import * as g from "./userDetailsManager"
+import * as storage from "./userDetailsManager"
 import router from '../../routing'
-import {clearUserDetails, saveUserDetails} from "./userDetailsManager";
 import {nonAuthenticatedPostRequest} from "../Http/HttpClient.js";
+import {HttpStatusCode} from "axios";
 
 export const loginPath = "/auth/login"
+const azureUrl = "https://cars-r-us-api.azurewebsites.net/api/auth/login"
+const localUrl = "http://localhost:8080/api/auth/login"
 
 export function isAuthenticated(){
-    return g.lsAccessToken() !== ""
+    return storage.lsAccessToken() !== ""
 }
 
-const url = "https://cars-r-us-api.azurewebsites.net/api/auth/login"
-
 export function logout(){
-    clearUserDetails()
+    storage.clearUserDetails()
     router.push('/auth/login')
 }
 
-export function login(credentials,errorHandler){
+export function login(credentials,errorHandler) {
     let json = JSON.stringify(credentials)
-    nonAuthenticatedPostRequest(url,json,authenticationSuccess,
+    nonAuthenticatedPostRequest(localUrl, json, authenticationSuccess,
         (e) => errorHandler("Incorrect username or password"),
-        (e) => errorHandler("No active connection"))
+        (e) => handleConnectionRefused(e,errorHandler))
+}
+
+function handleConnectionRefused(e,errorHandler){
+    if(e.code === "ERR_NETWORK"){
+        errorHandler("No active connection")
+        return
+    }
+    let code = e.response.status
+    if(code === HttpStatusCode.Unauthorized)
+        errorHandler(e.response.data)
 }
 
 function authenticationSuccess(userDetails){
     console.log(userDetails)
-    saveUserDetails(userDetails)
+    storage.saveUserDetails(userDetails)
     router.push('/')
 }

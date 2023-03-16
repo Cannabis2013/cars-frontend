@@ -21,15 +21,11 @@ export default {
   },
   methods: {
     handleSubmit(){
-      let credentials = {
+      this.showSpinnerCircle()
+      login({
         username : this.uName,
         password : this.pass
-      }
-      login(credentials,this.handleError)
-      timer = setTimeout(() => {
-        this.showSpinner = true
-      },500)
-      
+      },this.handleError)
       this.clearValues()
     },
     clearValues(){
@@ -38,6 +34,14 @@ export default {
     },
     handleError(msg){
       this.message = msg
+      this.hideSpinnerCircle()
+    },
+    showSpinnerCircle(){
+      timer = setTimeout(() => {
+        this.showSpinner = true
+      },500)
+    },
+    hideSpinnerCircle(){
       clearTimeout(timer)
       this.showSpinner = false
     }
