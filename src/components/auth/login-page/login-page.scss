@@ -29,6 +29,15 @@ input{
   border-radius: 10px;
 }
 
+#err-msg > p{
+  color: red;
+}
+
+#err-msg{
+  grid-column: span 2;
+  
+}
+
 #login-txt{
   text-align: left;
   font-size: 1.75rem;

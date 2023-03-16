@@ -6,8 +6,9 @@ export default {
   props: [],
   data () {
     return {
-      uName : "MHAdmin",
-      pass : "xrpuofni"
+      uName : "",
+      pass : "",
+      message : "TEST"
     }
   },
   computed: {
@@ -21,10 +22,10 @@ export default {
         username : this.uName,
         password : this.pass
       }
-      login(credentials)
+      login(credentials,this.authRejected)
       this.clearValues()
     },
-    handleResult(data){
+    authRejected(){
       
     },
     clearValues(){

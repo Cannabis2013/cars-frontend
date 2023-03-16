@@ -4,6 +4,7 @@
       <p>Username:</p>
       <input id="un-ipt" v-model="uName" type="text">
       <p>Password:</p>
+      <p id="err-msg">{{ message }}</p>
       <input id="pass-ipt" v-model="pass" type="password">
       <button id="submit-btn" @click="handleSubmit">Send</button>
   </div>
