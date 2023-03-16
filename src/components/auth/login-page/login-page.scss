@@ -1,10 +1,14 @@
 #login-page {
   width: 100%;
   padding: 25px;
+  
 }
 
 #form-cont{
   display: grid;
+  padding: 25px;
+  border-radius: 20px;
+  background-color: lightgreen;
   grid-auto-flow: row;
   grid-template-columns: min-content 1fr;
   align-items: center;
@@ -19,30 +23,56 @@ p{
   font-size: 1.25rem;
 }
 
-#submit-btn{
-  grid-column: span 2;
-  justify-self: end;
-}
-
 input{
   padding:5px;
   border-radius: 10px;
 }
 
-#err-msg > p{
-  color: red;
-}
-
 #err-msg{
-  grid-column: span 2;
-  
+  grid-column: 2 / 2;
+  color: red;
+  text-align: left;
+  font-size: 1.25rem;
+  height: 1.25rem;
 }
 
 #login-txt{
   text-align: left;
   font-size: 1.75rem;
   font-weight: bold;
+  line-height: 2rem;
   grid-column: span 2;
   justify-self: start;
   margin-bottom: 15px;
+  background-color: saddlebrown;
+  color: white;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+#submit-btn{
+  grid-column: 2 / 2;
+  justify-self: end;
+  border-radius: 5px;
+  height: 32px;
+}
+
+#submit-btn:active{
+  scale: 0.97;
+}
+
+#spin-box{
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(white 50%,blue 50%);
+  border-radius: 45px;
+  grid-column: 2 / 2;
+  justify-self: end;
+  animation: spin-round 0.5s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes spin-round {
+  from {transform: rotate(0)}
+  to {transform: rotate(360deg)}
 }

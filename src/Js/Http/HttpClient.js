@@ -14,7 +14,7 @@ export function nonAuthenticatedPostRequest(url, payload, resultHandler, badRequ
             badRequestHandler(response.status);
         }
         resultHandler(response.data);
-    }).catch(e => handleConnectionProblem(e,badConnectionHandler))
+    }).catch(e => badConnectionHandler(e))
 }
 
 export function authenticatedGetRequest(url, resultHandler,requestParameters = {}) {
