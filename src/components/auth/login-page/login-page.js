@@ -1,5 +1,7 @@
 import {login} from "../../../Js/auth/authentication";
 
+let timer
+
 export default {
   name: 'login-page',
   components: {},
@@ -7,7 +9,9 @@ export default {
   data () {
     return {
       uName : "",
-      pass : ""
+      pass : "",
+      message : "",
+      showSpinner : false
     }
   },
   computed: {
@@ -21,16 +25,22 @@ export default {
         username : this.uName,
         password : this.pass
       }
-      login(credentials)
-      this.clearValues()
-    },
-    handleResult(data){
+      login(credentials,this.handleError)
+      timer = setTimeout(() => {
+        this.showSpinner = true
+      },500)
       
+      this.clearValues()
     },
     clearValues(){
       this.uName = ""
       this.pass = ""
     },
+    handleError(msg){
+      this.message = msg
+      clearTimeout(timer)
+      this.showSpinner = false
+    }
   }
 }
 

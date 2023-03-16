@@ -16,17 +16,15 @@ export function logout(){
     router.push('/auth/login')
 }
 
-export function login(credentials){
+export function login(credentials,errorHandler){
     let json = JSON.stringify(credentials)
-    nonAuthenticatedPostRequest(url,json,authenticationSuccess,authenticationRejected)
+    nonAuthenticatedPostRequest(url,json,authenticationSuccess,
+        (e) => errorHandler("Incorrect username or password"),
+        (e) => errorHandler("No active connection"))
 }
 
 function authenticationSuccess(userDetails){
     console.log(userDetails)
     saveUserDetails(userDetails)
     router.push('/')
-}
-
-function authenticationRejected(data){
-    alert("WRONG CREDENTIALS!")
 }
