@@ -1,7 +1,5 @@
 import {authenticatedGetRequest} from '../../../Js/Http/HttpClient'
-
-const azureGetCarUri = "https://cars-r-us-api.azurewebsites.net/cars/one"
-const localGetCarUri = "http://localhost:8080/cars/one"
+import apiInfo from "../../../Js/api/apiEndpoints.js";
 
 export default {
   name: 'car-details',
@@ -19,7 +17,7 @@ export default {
     
   },
   mounted () {
-    authenticatedGetRequest(azureGetCarUri,this.handleResult,{id : this.id})
+    authenticatedGetRequest(apiInfo.endpoints.apiCarUri,this.handleResult,{id : this.id})
   },
   methods: {
     handleResult : function (data){

@@ -1,8 +1,7 @@
 import Car from '../car-card/car-card.vue'
 import {authenticatedGetRequest} from '../../../Js/Http/HttpClient'
+import apiInfo from "../../../Js/api/apiEndpoints.js";
 
-const azureGetCars = "https://cars-r-us-api.azurewebsites.net/cars/all"
-const localGetCarsUri = "http://localhost:8080/cars/all"
 
 export default {
   name: 'cars-overview',
@@ -17,7 +16,7 @@ export default {
     
   },
   mounted () {
-    authenticatedGetRequest(azureGetCars,this.handleResult)
+    authenticatedGetRequest(apiInfo.endpoints.apiCarsUri,this.handleResult)
   },
   methods: {
     handleResult : function (cars){
