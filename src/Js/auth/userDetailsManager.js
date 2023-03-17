@@ -1,18 +1,18 @@
-export function lsAccessToken(){
+export function getAccessToken(){
     let token = localStorage.getItem("tokenKey")
     if(token == null)
         return ""
     return token
 }
 
-export function lsUserName(){
+export function getUserName(){
     let username = localStorage.getItem("username")
     if(username == null)
         return ""
     return username
 }
 
-export function lsRoles(){
+export function getUserRoles(){
     let roles = localStorage.getItem("roles")
     if(roles == null)
         return ""

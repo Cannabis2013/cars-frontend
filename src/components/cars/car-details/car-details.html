@@ -4,6 +4,7 @@
     </div>
     <div id="car-model"> {{car.brand}} {{car.model}}</div>
     <div id="car-price"> {{car.pricePrDay}} kr. </div>
+    <button id="add-res-btn" @click="this.handleAddReservationClicked">Reserve</button>
     <div id="car-descr">
         <div style="font-size: 1.75rem;font-weight: bold;text-align: left;">Description:</div>
         {{ car.description }}
@@ -15,6 +16,5 @@
             <li>{{feat}}</li>
         </ul>
     </div>
-    <router-link class="dropdown-item" :to="'/reservations/add/' +car.id + '/' + car.brand + '/' + car.model">Reserve</router-link>
 </section>
 

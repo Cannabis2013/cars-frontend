@@ -1,7 +1,7 @@
 import axios, {HttpStatusCode} from "axios";
 import * as userCredentials from "../auth/userDetailsManager";
 
-export function nonAuthenticatedPostRequest(url, payload, resultHandler, badRequestHandler, badConnectionHandler){
+export function NonAuthenticatedHttpPostRequest(url, payload, resultHandler, badRequestHandler, badConnectionHandler){
     axios({
         method : 'post',
         url : url,
@@ -11,19 +11,32 @@ export function nonAuthenticatedPostRequest(url, payload, resultHandler, badRequ
         data : payload
     }).then(response => {
         if(response.status !== HttpStatusCode.Ok)
-            badRequestHandler(response.status)
+            badRequest(response.status,badRequestHandler)
         else
             resultHandler(response.data);
-    }).catch(e => badConnectionHandler(e))
+    }).catch(e => connectionRefused(e,badConnectionHandler))
 }
 
-export function authenticatedGetRequest(url, resultHandler,requestParameters = {}) {
-    let header = authHeader()
+export function httpPostRequest(url, payload, resultHandler, badRequestHandler, badConnectionHandler){
+    axios({
+        method : 'post',
+        url : url,
+        headers : headerWithAuthentication(),
+        data : payload
+    }).then(response => {
+        if(response.status === HttpStatusCode.BadRequest)
+            badRequest(response.status,badRequestHandler)
+        else
+            resultHandler(response.data);
+    }).catch(e => connectionRefused(e,badConnectionHandler))
+}
+
+export function httpGetRequest(url, resultHandler, requestParameters = {}) {
     axios({
         method : 'get',
         url : url,
         params: requestParameters,
-        headers : header
+        headers : headerWithAuthentication()
     }).then(response => {
         if(response.status !== 200)
             return
@@ -31,11 +44,26 @@ export function authenticatedGetRequest(url, resultHandler,requestParameters = {
     }).catch(e => console.log('HTTPCLIENT FAIL MESSAGE: ' + e.message))
 }
 
-function authHeader(){
+function headerWithAuthentication(){
     return {
-        username : userCredentials.lsUserName(),
-        authorization : 'Bearer ' + userCredentials.lsAccessToken(),
-        roles : userCredentials.lsRoles()
+        "content-type" : "application/json",
+        username : userCredentials.getUserName(),
+        authorization : 'Bearer ' + userCredentials.getAccessToken(),
+        roles : userCredentials.getUserRoles()
     }
+}
+
+function badRequest(status,handler){
+    if(handler !== undefined)
+        handler(status)
+    else
+        console.log("Server responded with code: " + status)
+}
+
+function connectionRefused(e, handler){
+    if(handler !== undefined)
+        handler(e)
+    else
+        console.log("Connection refused: " + e)
 }
 

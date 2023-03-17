@@ -9,6 +9,7 @@
             </div>
             <ul class="dropdown-menu">
                 <li><router-link class="dropdown-item" :to="{name: 'cars-page'}">All cars</router-link></li>
+                <li><router-link class="dropdown-item" :to="{name: 'reservations-page'}">Your reservations</router-link></li>
                 <div v-if="!isAuthorized()">
                     <li><router-link class="dropdown-item" :to="{name: 'login-page'}">Login</router-link></li>
                 </div>

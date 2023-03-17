@@ -1,5 +1,5 @@
 import Car from '../car-card/car-card.vue'
-import {authenticatedGetRequest} from '../../../Js/Http/HttpClient'
+import {httpGetRequest} from '../../../Js/Http/HttpClient'
 import apiInfo from "../../../Js/api/apiEndpoints.js";
 
 
@@ -16,7 +16,7 @@ export default {
     
   },
   mounted () {
-    authenticatedGetRequest(apiInfo.endpoints.apiCarsUri,this.handleResult)
+    httpGetRequest(apiInfo.endpoints.apiCarsUri,this.handleResult)
   },
   methods: {
     handleResult : function (cars){

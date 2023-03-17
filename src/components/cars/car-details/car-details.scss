@@ -5,18 +5,20 @@
   margin-top: 50px;
   gap: 25px;
   align-items: start;
-}
-
-.car-details {
-  width: 100%;
-  height: min-content;
   overflow: auto;
+  padding: 25px;
 }
 
 #img-cont{
   grid-row: span 4;
   border-radius: 15px;
   overflow: auto;
+}
+
+#add-res-btn{
+  height: 80px;
+  width: 128px;
+  border-radius: 15px;
 }
 
 #car-model{

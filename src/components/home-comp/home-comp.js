@@ -1,4 +1,4 @@
-import {lsUserName} from "../../Js/auth/userDetailsManager";
+import {getUserName} from "../../Js/auth/userDetailsManager";
 
 export default {
   name: 'home-comp',
@@ -13,7 +13,7 @@ export default {
 
   },
   mounted () {
-    this.username = lsUserName()
+    this.username = getUserName()
   },
   methods: {
 

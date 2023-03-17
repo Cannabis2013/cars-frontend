@@ -1,13 +1,13 @@
 import * as storage from "./userDetailsManager"
 import router from '../../routing'
-import {nonAuthenticatedPostRequest} from "../Http/HttpClient.js";
+import {NonAuthenticatedHttpPostRequest} from "../Http/HttpClient.js";
 import {HttpStatusCode} from "axios";
 import apiInfo from "../api/apiEndpoints.js";
 
 export const loginPath = "/auth/login"
 
 export function isAuthenticated(){
-    return storage.lsAccessToken() !== ""
+    return storage.getAccessToken() !== ""
 }
 
 export function logout(){
@@ -17,7 +17,7 @@ export function logout(){
 
 export function login(credentials,errorHandler) {
     let json = JSON.stringify(credentials)
-    nonAuthenticatedPostRequest(apiInfo.endpoints.apiLoginUri, json, authenticationSuccess,
+    NonAuthenticatedHttpPostRequest(apiInfo.endpoints.apiLoginUri, json, authenticationSuccess,
         (e) => errorHandler("Incorrect username or password"),
         (e) => handleConnectionRefused(e,errorHandler))
 }

@@ -6,7 +6,8 @@ const endpoints = {
     apiCarUri : base + "/cars/one",
     apiCarsUri : base + "/cars/all",
     apiLoginUri : base + "/api/auth/login",
-    apiAddResUri : base + "reservations/reserve"
+    apiAddResUri : base + "/reservations/reserve",
+    apiAllResUri : base + "/reservations/all"
 }
 
 const apiInfo = {

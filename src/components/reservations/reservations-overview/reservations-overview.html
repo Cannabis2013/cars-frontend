@@ -1,8 +1,18 @@
 
-<div>
-  <div v-if="reservations.length == 0">
-    <h1>No reservations</h1>
-  </div>
-  <div v-else>
-  </div>
+<div id="res-ovw-cont">
+    <div v-if="reservations.length === 0">
+        <h1>No reservations</h1>
+    </div>
+    <div v-else>
+        <div id="res-head-cont" class="list-lout">
+            <p>Start date</p>
+            <p>End date</p>
+            <p>Car model</p>
+        </div>
+        <div id="res-view-cont" class="list-lout" v-for="reservation in reservations">
+            <p>{{ reservation.reservationStart }}</p>
+            <p>{{ reservation.reservationEnd }}</p>
+            <p> {{ reservation.brand }}  {{ reservation.model }}</p>
+        </div>
+    </div>
 </div>

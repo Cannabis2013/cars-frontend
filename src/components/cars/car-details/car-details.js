@@ -1,5 +1,6 @@
-import {authenticatedGetRequest} from '../../../Js/Http/HttpClient'
+import {httpGetRequest} from '../../../Js/Http/HttpClient'
 import apiInfo from "../../../Js/api/apiEndpoints.js";
+import router from "../../../routing.js";
 
 export default {
   name: 'car-details',
@@ -17,12 +18,17 @@ export default {
     
   },
   mounted () {
-    authenticatedGetRequest(apiInfo.endpoints.apiCarUri,this.handleResult,{id : this.id})
+    httpGetRequest(apiInfo.endpoints.apiCarUri,this.handleResult,{id : this.id})
   },
   methods: {
-    handleResult : function (data){
+    handleResult : function(data) {
       this.car = data
     },
+    handleAddReservationClicked : function (){
+      let uri = "/reservations/add/" + this.car.id + "/" 
+          + this.car.brand + "/" + this.car.model
+      router.push(uri)
+    }
   }
 }
 
