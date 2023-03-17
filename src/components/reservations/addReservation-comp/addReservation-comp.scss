@@ -1,3 +1,18 @@
-.add-reservation-comp {
+#page-cnt {
+  width: 768px;
+  padding: 25px;
+}
 
+#form-cnt{
+  width: 256px;
+  display: grid;
+  grid-auto-flow: row;
+  grid-template-columns: 48px 1fr;
+  align-items: center;
+  gap:15px;
+}
+
+#rsv-btn{
+  grid-column: 2/2;
+  justify-self: end;
 }
