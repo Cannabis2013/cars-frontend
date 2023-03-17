@@ -1,4 +1,4 @@
-const isDev = false
+const isDev = true
 const base = isDev ? 'http://localhost:8080'  : 
                     'https://cars-r-us-api.azurewebsites.net'
 
