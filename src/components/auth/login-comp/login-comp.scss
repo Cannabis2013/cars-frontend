@@ -3,7 +3,7 @@
   padding: 20px;
   border-radius: 10px;
   grid-auto-flow: row;
-  grid-template-columns: 128px 1fr 1fr;
+  grid-template-columns: 128px 1fr min-content;
   align-items: center;
   gap: 10px;
   width: 100%;
@@ -42,10 +42,18 @@ input{
   line-height: 1.25rem;
   height: 100%;
   white-space: nowrap;
-  overflow: hidden;
+  overflow-x: auto;
+}
+
+#err-msg::-webkit-scrollbar{
+  display: none;
 }
 
 #submit-btn{
+  display: grid;
+  border:0;
+  align-items: center;
+  justify-content: center;
   grid-column: 3 / 3;
   justify-self: end;
   border-radius: 5px;
@@ -56,18 +64,23 @@ input{
   font-size: 1.5rem;
 }
 
+#submit-btn:hover{
+  box-shadow: white 0 0 10px;
+}
+
 #submit-btn:active{
   scale: 0.97;
 }
 
 #spin-box{
-  width: 48px;
-  height: 48px;
+  width: 12px;
+  height: 12px;
   background: linear-gradient(white 50%,blue 50%);
+  box-shadow: white 0 5px 15px;
   border-radius: 45px;
-  grid-column: 2 / 2;
+  grid-column: 3 / 3;
   justify-self: end;
-  animation: spin-round 0.5s linear;
+  animation: spin-round 1s linear;
   animation-iteration-count: infinite;
 }
 
