@@ -8,8 +8,8 @@ export default {
   props: [],
   data () {
     return {
-      uName : "",
-      pass : "",
+      username : "",
+      password : "",
       message : "",
       showSpinner : false
     }
@@ -22,15 +22,12 @@ export default {
   methods: {
     handleSubmit(){
       this.showSpinnerCircle()
-      login({
-        username : this.uName,
-        password : this.pass
-      },this.handleError)
+      login(this.username,this.password,this.handleError)
       this.clearValues()
     },
     clearValues(){
-      this.uName = ""
-      this.pass = ""
+      this.username = ""
+      this.password = ""
     },
     handleError(msg){
       this.message = msg

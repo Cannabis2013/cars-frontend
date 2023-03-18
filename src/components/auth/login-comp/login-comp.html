@@ -1,10 +1,12 @@
 <div id="form-cont" class="h-center">
     <p>Username:</p>
-    <input id="un-ipt" class="span-2-cols" v-model="uName" type="text">
+    <input id="un-ipt" class="span-2-cols" v-model="username" type="text">
     <p>Password:</p>
-    <input id="pass-ipt" class="span-2-cols" v-model="pass" type="password">
+    <input id="pass-ipt" class="span-2-cols" v-model="password" type="password">
     <p id="err-msg" class="span-2-cols">{{ message }}</p>
-    <button v-if="!this.showSpinner" id="submit-btn" @click="handleSubmit">Send</button>
-    <div v-else id="spin-box"></div>
+    <button id="submit-btn" @click="handleSubmit">
+        <p v-if="!this.showSpinner">Send</p>
+        <div v-else id="spin-box"></div>
+    </button>
 </div>
 

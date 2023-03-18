@@ -15,8 +15,8 @@ export function logout(){
     router.push('/auth/login')
 }
 
-export function login(credentials,errorHandler) {
-    let json = JSON.stringify(credentials)
+export function login(username,password,errorHandler) {
+    let json = JSON.stringify({username,password})
     NonAuthenticatedHttpPostRequest(apiInfo.endpoints.login, json, authenticationSuccess,
         (e) => errorHandler("Incorrect username or password"),
         (e) => handleConnectionRefused(e,errorHandler))
