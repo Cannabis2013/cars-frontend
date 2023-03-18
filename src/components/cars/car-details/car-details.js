@@ -18,7 +18,7 @@ export default {
     
   },
   mounted () {
-    httpGetRequest(apiInfo.endpoints.apiCarUri,this.handleResult,{id : this.id})
+    httpGetRequest(apiInfo.endpoints.car,this.handleResult,{id : this.id})
   },
   methods: {
     handleResult : function(data) {

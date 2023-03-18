@@ -1,11 +1,12 @@
-<div id="form-cont" class="h-center">
-    <div id="login-txt">Enter credentials</div>
-    <p>Username:</p>
-    <input id="un-ipt" v-model="uName" type="text">
-    <p>Password:</p>
-    <input id="pass-ipt" v-model="pass" type="password">
-    <p id="err-msg">{{ message }}</p>
-    <button v-if="!this.showSpinner" id="submit-btn" @click="handleSubmit">Send</button>
-    <div v-else id="spin-box"></div>
-</div>
+<section id="login-cont" class="h-center">
+    <h1 id="intro-head">Hello stranger</h1>
+    <p id="intro-msg">
+        Please login to proceed to this fantastic rental service
+        or <span><router-link to="/">sign up</router-link></span> (not implemented)
+    </p>
+    <br>
+    <div id="form-wrp" class="h-center">
+        <LoginForm></LoginForm>
+    </div>
+</section>
 

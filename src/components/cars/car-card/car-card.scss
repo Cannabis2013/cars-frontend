@@ -1,7 +1,7 @@
 #car-cont {
     display: grid;
     grid-auto-flow: row;
-    grid-template-columns: 1fr 1fr 128px;
+    grid-template-columns: 1fr 1fr 32px 32px;
     width: 100%;
     align-items: center;
     column-gap: 10px;
@@ -27,9 +27,15 @@ p{
 }
 
 #res-mrk{
+    display: grid;
+    align-items: center;
+    height: 32px;
+    border-radius: 45px;
     background-color: green;
     color: white;
     font-size: 1.25rem;
+    line-height: 1.25rem;
+    padding: 0;
 }
 
 #car-name{
@@ -42,11 +48,21 @@ p{
     user-select: none;
 }
 
-#reserve-btn{
+#inf-btn{
+    background-color: white;
     width: 100%;
-    border-radius: 5px;
+    height: 32px;
+    font-size: 2rem;
+    line-height: 1.75rem;
+    font-weight: bold;
+    border-radius: 45px;
 }
 
-#reserve-btn:active{
+#inf-btn:hover{
+    scale: 1.1;
+    box-shadow: black 0 0 25px;
+}
+
+#inf-btn:active{
     scale: 0.98;
 }

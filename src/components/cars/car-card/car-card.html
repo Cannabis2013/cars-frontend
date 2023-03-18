@@ -1,11 +1,8 @@
 <div id="car-cont">
     <div id="name-wrap"><p id="car-name"> {{ car.brand }} {{ car.model }} </p></div>
     <p id="car-price"> {{ car.pricePrDay }} kr. </p>
-    <div v-if="!car.reserved">
-        <input id="reserve-btn" type="button" :onclick="() => this.redirectToDetails()" value="Klik for flere detaljer">
-    </div>
-    <div v-else>
-        <div id="res-mrk">Reserved</div>
-    </div>
+    <input id="inf-btn" type="button" :onclick="() => this.redirectToDetails()" value="!">
+    <div v-if="car.reserved" id="res-mrk">R</div>
+    <p v-else></p>
 </div>
 

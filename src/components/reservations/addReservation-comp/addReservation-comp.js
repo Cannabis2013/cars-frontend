@@ -30,7 +30,7 @@ export default {
         reservationEnd : this.end,
         carId : this.carId
       }
-      httpPostRequest(apiInfo.endpoints.apiAddResUri, payload,this.handleSuccess)
+      httpPostRequest(apiInfo.endpoints.addReservation, payload,this.handleSuccess)
     },
     handleSuccess : function (){
       router.push("/cars/all")

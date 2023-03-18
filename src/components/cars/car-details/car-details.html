@@ -4,7 +4,7 @@
     </div>
     <div id="car-model"> {{car.brand}} {{car.model}}</div>
     <div id="car-price"> {{car.pricePrDay}} kr. </div>
-    <button id="add-res-btn" @click="this.handleAddReservationClicked">Reserve</button>
+    <button v-if="!car.reserved" id="add-res-btn" @click="this.handleAddReservationClicked">Reserve</button>
     <div id="car-descr">
         <div style="font-size: 1.75rem;font-weight: bold;text-align: left;">Description:</div>
         {{ car.description }}
