@@ -11,7 +11,6 @@ export default {
     }
   },
   computed: {
-
   },
   mounted () {
     httpGetRequest(apiInfo.endpoints.apiAllResUri, this.handleReservations)
